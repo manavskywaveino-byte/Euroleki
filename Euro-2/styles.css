@@ -1,0 +1,526 @@
+:root {
+  --brand-blue: #0e7fc5;
+  --brand-blue-dark: #085f95;
+  --text-dark: #1b2330;
+  --muted: #5f6b7a;
+  --surface: #f6f9fc;
+  --white: #ffffff;
+  --pattern: url("https://euroleki.eu/wp-content/uploads/2019/01/tlo.png");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.7;
+  background: radial-gradient(circle at 0% -10%, #e8f4ff 0%, transparent 34%), var(--surface);
+}
+
+.topbar {
+  background: #091d2e;
+  color: #cde5f6;
+  font-size: 0.86rem;
+  padding: 0.45rem 0;
+}
+
+.topbar i {
+  color: #7ec5f4;
+  margin-right: 0.3rem;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(14, 127, 197, 0.1);
+}
+
+.nav-link {
+  color: var(--text-dark);
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.15rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-blue), #1ea5f4);
+  transition: width 0.22s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--brand-blue);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+.btn-brand {
+  background: linear-gradient(135deg, var(--brand-blue), #1899e6);
+  color: var(--white);
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(14, 127, 197, 0.3);
+}
+
+.btn-brand:hover {
+  background: linear-gradient(135deg, var(--brand-blue-dark), var(--brand-blue));
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.hero-section {
+  position: relative;
+  background: url("https://euroleki.eu/wp-content/uploads/2019/01/slider_tlo.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(5, 29, 47, 0.86), rgba(14, 127, 197, 0.64));
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+}
+
+.hero-heading {
+  color: var(--white);
+  font-size: clamp(2rem, 4.8vw, 3.3rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.hero-sub {
+  color: #dbedf9;
+  font-size: 1.08rem;
+  max-width: 55ch;
+}
+
+.hero-panel {
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(7px);
+}
+
+.hero-title-img {
+  max-width: 100%;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 0.7rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.stat-item h3 {
+  color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.1rem;
+}
+
+.stat-item p {
+  color: #eaf5ff;
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.section {
+  position: relative;
+  overflow: clip;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 159, 232, 0.13), transparent 65%);
+  top: -120px;
+  right: -120px;
+  pointer-events: none;
+}
+
+.section-title {
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--brand-blue);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.section-title h2 {
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.media-card {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 0.8rem;
+  box-shadow: 0 14px 40px rgba(13, 30, 57, 0.1);
+}
+
+.video-wrap {
+  max-width: 980px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(20, 39, 63, 0.16);
+  border: 1px solid rgba(11, 74, 115, 0.12);
+  background: #000;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--white);
+  color: var(--text-dark);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(11, 74, 115, 0.11);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.chip i {
+  color: var(--brand-blue);
+}
+
+.offer-section,
+.contact-section {
+  background: linear-gradient(rgba(8, 60, 95, 0.92), rgba(10, 83, 130, 0.92)), var(--pattern);
+}
+
+.offer-section::before,
+.contact-section::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 68%);
+}
+
+.offer-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 0.95rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--white);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.offer-link-stretch {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 0.95rem;
+}
+
+.offer-card h3 {
+  font-size: 1.02rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.offer-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+}
+
+.offer-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.offer-highlight i {
+  font-size: 2rem;
+}
+
+.offer-highlight p {
+  margin-bottom: 0;
+  color: #e8f7ff;
+  font-size: 0.94rem;
+}
+
+.patterned-bg {
+  background-image: var(--pattern);
+  background-repeat: repeat;
+}
+
+.team-card {
+  background: var(--white);
+  border-radius: 0.95rem;
+  overflow: hidden;
+  border: 1px solid rgba(11, 74, 115, 0.08);
+  box-shadow: 0 12px 30px rgba(21, 43, 70, 0.09);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 36px rgba(21, 43, 70, 0.15);
+}
+
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.team-body {
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.team-body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+  font-weight: 800;
+}
+
+.team-body p {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+.team-body a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.93rem;
+}
+
+.team-body a:hover,
+.team-body a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.doc-card {
+  background: var(--white);
+  border: 1px solid rgba(11, 74, 115, 0.11);
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 10px 26px rgba(18, 42, 66, 0.08);
+}
+
+.doc-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.doc-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.doc-card a {
+  color: var(--brand-blue-dark);
+  text-decoration: none;
+}
+
+.quality-image {
+  min-height: 360px;
+  border-radius: 1rem;
+  background: url("https://euroleki.eu/wp-content/uploads/2019/01/jakosc.jpg") center/cover no-repeat;
+  box-shadow: 0 14px 34px rgba(20, 39, 63, 0.18);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  color: var(--white);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem;
+}
+
+.contact-info h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.contact-info i {
+  color: #c7ecff;
+  margin-right: 0.35rem;
+}
+
+.contact-info a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.form-label {
+  color: #e6f4ff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-control {
+  border-radius: 0.65rem;
+  padding: 0.72rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(121, 202, 249, 0.28);
+  border-color: #95d9ff;
+}
+
+.footer-section {
+  background: #0f1c2a;
+  color: #b5c8d7;
+}
+
+a[href^="mailto:"] {
+  text-decoration: none;
+}
+
+.scroll-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  border: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand-blue), #1ea5f4);
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(14, 127, 197, 0.38);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 1030;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+  .hero-heading {
+    font-size: clamp(1.7rem, 9vw, 2.5rem);
+  }
+
+  .min-vh-75 {
+    min-height: auto;
+    padding: 5.2rem 0 3.5rem;
+  }
+
+  .section::before {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+.team-body .email-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: #000;
+  background: #f2f4f7;
+  border: 1px solid #d9dde3;
+}
+
+.team-body .contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.team-body .email-icon-link:hover,
+.team-body .email-icon-link:focus {
+  color: #000;
+  background: #e8edf3;
+  text-decoration: none;
+}
+
+.team-body .whatsapp-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #25d366;
+  border: 1px solid #1fb657;
+  text-decoration: none;
+}
+
+.team-body .whatsapp-icon-link:hover,
+.team-body .whatsapp-icon-link:focus {
+  color: #fff;
+  background: #1fb657;
+  text-decoration: none;
+}
+
+.team-body .call-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #4d647d;
+  border: 1px solid #3f546a;
+}
